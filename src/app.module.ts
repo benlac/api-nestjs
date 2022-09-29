@@ -7,6 +7,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { AppResolver } from './app.resolver';
 import { join } from 'path';
+import { ArticleModule } from './article/article.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { join } from 'path';
         synchronize: true,
       }),
     }),
+    ArticleModule,
   ],
   controllers: [AppController],
   providers: [AppService, AppResolver],
